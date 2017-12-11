@@ -34,17 +34,18 @@ return s;
 
 void putData(char *file,sn s)
 {
-if(s==NULL)
-{
-printf("Nothing to write\n");
-return;
-}
-
 FILE *fp;
 fp=fopen(file,"w");
 
 if(fp!=NULL)
 {
+
+if(s==NULL)
+{
+fprintf(fp,"EMPTY");
+return;
+}
+
 int i;
 temp=s;
 for(i=1;temp!=NULL;i++)
@@ -64,10 +65,16 @@ sn getData(char *file,sn s)
 
 FILE *fp;
 fp=fopen(file,"r");
-rewind(fp);
+
 if(fp!=NULL)
 {
+char emp[5];
+fscanf(fp,"%s",emp);
 
+if(!strcmp(emp,"EMPTY"))
+return NULL;
+
+rewind(fp);
 temp=s;
 while(!feof(fp))
 {
