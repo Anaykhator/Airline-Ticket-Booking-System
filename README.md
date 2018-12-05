@@ -4,7 +4,7 @@
 * Open Terminal
 Write  
 `cd Desktop`   
-`git clone https://github.com/piyush97/BillingSystem`
+`git clone https://github.com/Anaykhator/Airline-Ticket-Booking-System`
 ### Custom Header File
 
 Reason: We used a custom header file to make things look in a simple in the main file and for data abstraction.
